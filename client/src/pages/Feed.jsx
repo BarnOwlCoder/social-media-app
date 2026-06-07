@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { dummyPostsData } from "../assets/assets";
 import Loading from "../components/Loading";
+import StoriesBar from "../components/StoriesBar";
 
 function Feed() {
 
     const [feeds, setFeeds] = useState([])
     const [loading, setLoading] = useState(false)
 
-    const fetchFeeds = async (params) => {
+    const fetchFeeds = async () => {
         setFeeds(dummyPostsData)
     }
 
@@ -20,6 +21,7 @@ function Feed() {
 
             {/* stories and post list */}
             <div>
+                <StoriesBar />
                 <h1>Stories here</h1>
                 <div className="p-4 space-y-6">list of posts</div>
             </div>
